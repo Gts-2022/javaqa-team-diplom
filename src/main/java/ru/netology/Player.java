@@ -4,22 +4,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Player {
-    private String name;
+    private final String name;
 
     /**
      * информация о том, в какую игру сколько часов было сыграно
      * ключ - игра
      * значение - суммарное количество часов игры в эту игру
      */
-    private Map<Game, Integer> playedTime = new HashMap<>();
+    private final Map<Game, Integer> playedTime = new HashMap<>();
 
     public Player(String name) {
+
         this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
 
     /**
      * добавление игры игроку
@@ -36,11 +34,11 @@ public class Player {
     }
 
     /**
-     * игрок играет в игру game на протяжении hours часов
+     * Игрок играет в игру game на протяжении hours часов
      * об этом нужно сообщить объекту-каталогу игр, откуда была установлена игра
      * также надо обновить значения в мапе игрока, добавив проигранное количество часов
      * возвращает суммарное количество часов, проигранное в эту игру.
-     * если игра не была установлена, то надо выкидывать RuntimeException
+     * Если игра не была установлена, то надо выкидывать RuntimeException
      */
 
     public int play(Game game, int hours) {
