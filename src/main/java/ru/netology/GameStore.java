@@ -60,7 +60,7 @@ public class GameStore {
      * времени. Если игроков нет, то возвращается null
      */
     public String getMostPlayer() {
-        int mostTime = 1;
+        int mostTime = 0;
         String bestPlayer = null;
         for (String playerName : playedTime.keySet()) {
             int playerTime = playedTime.get(playerName);
